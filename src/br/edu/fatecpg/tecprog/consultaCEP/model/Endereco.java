@@ -2,6 +2,8 @@ package br.edu.fatecpg.tecprog.consultaCEP.model;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.util.Objects;
+
 public class Endereco {
     private String cep;
     private String logradouro;
@@ -11,7 +13,8 @@ public class Endereco {
     private String cidade;
 
     public String getLogradouro() {
-        return logradouro;
+        if (Objects.equals(this.logradouro, "")) return "Indisponível";
+        else return logradouro;
     }
 
     public String getCep() {
@@ -19,15 +22,18 @@ public class Endereco {
     }
 
     public String getEstado() {
-        return estado;
+        if (Objects.equals(this.estado, "")) return "Indisponível";
+        else return estado;
     }
 
     public String getCidade() {
-        return cidade;
+        if (Objects.equals(this.cidade, "")) return "Indisponível";
+        else return cidade;
     }
 
     public String getBairro() {
-        return bairro;
+        if (Objects.equals(this.bairro, "")) return "Indisponível";
+        else return bairro;
     }
 
     @Override
